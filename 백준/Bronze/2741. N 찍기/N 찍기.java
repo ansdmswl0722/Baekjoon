@@ -1,13 +1,14 @@
 import java.util.*;
-
+import java.io.*;
 public class Main{
-    public static void main(String[] args){
+    public static void main(String[] args)throws IOException{
         Scanner sc = new Scanner(System.in);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = sc.nextInt();
         for(int i=1;i<=n;i++){
-            System.out.println(i);
+            bw.write(i+"\n");
         }
-        
-        
+        bw.flush();
+        bw.close(); 
     }
 }
