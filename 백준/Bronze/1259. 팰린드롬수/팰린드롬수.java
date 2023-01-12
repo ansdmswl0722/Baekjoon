@@ -6,21 +6,25 @@ public class Main {
 		try
         {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            StringBuilder sb = new StringBuilder();
             String str = "";
+
             while((str = br.readLine()) != null)
             {
                 String past = str;
-                StringBuilder sb = new StringBuilder(str);
                 if(str.equals("0")){
-                	System.out.println("");
+                	break;
                 }
-                else if(past.equals(sb.reverse().toString())) {
-                	System.out.println("yes");
+
+                boolean palindrome = true;
+                for(int i=0;i<str.length()/2+1;i++) {
+                	if(str.charAt(i)!=str.charAt(str.length()-i-1)) palindrome = false;
                 }
-                else{
-                	System.out.println("no");
-                }
+                if(palindrome) sb.append("yes").append("\n");
+                else sb.append("no").append("\n");
+                
             }
+            System.out.println(sb);
         }
         catch (Exception e)
         {
