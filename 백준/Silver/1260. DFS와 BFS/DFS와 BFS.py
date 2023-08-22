@@ -26,15 +26,12 @@ def dfs(graph,v,visited):
 dfs(graph,v,visited)
 print()
 visited=[False]*(n+1)
-def bfs(graph,v,visited):
-    queue = deque([v])
-    visited[v]=True
-    while queue:
-        v = queue.popleft()
-        print(v,end=" ") 
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i]=True
-
-bfs(graph,v,visited)
+queue = deque([v])
+visited[v]=True
+while queue:
+    v = queue.popleft()
+    print(v,end=" ") 
+    for i in graph[v]:
+        if not visited[i]:
+            queue.append(i)
+            visited[i]=True
